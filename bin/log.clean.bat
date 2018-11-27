@@ -5,3 +5,7 @@
 @del c:\windows\system32\*.txt
 @del c:\dellog.bat
 rem 删除C盘的日志文件
+
+ipconfig /flushdns
+
+pause
