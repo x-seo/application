@@ -1,0 +1,16 @@
+.idea
+redis
+python
+php
+openresty
+node.js/
+nginx
+mysql
+mongodb
+go
+clash
+*.zip
+*.tar
+*.rar
+*.7z
+*.log
