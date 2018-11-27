@@ -1,0 +1,6 @@
+@echo off
+echo Stopping apache...  
+taskkill /F /IM httpd.exe > nul
+echo Stopping MySQL...
+taskkill /F /IM mysqld.exe > nul
+exit
