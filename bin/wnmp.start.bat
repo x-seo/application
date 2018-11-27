@@ -13,6 +13,7 @@ RunHiddenConsole %OPEN_PATH%\nginx.exe -p %OPEN_PATH%
 
 echo Starting mysqld...
 RunHiddenConsole %MYSQL_PATH%\bin\mysqld.exe --basedir=%MYSQL_PATH% --log-error=%LOG_PATH%mysql.log --datadir=%MYSQL_PATH%data
+echo RunHiddenConsole %MYSQL_PATH%\bin\mysqld.exe --basedir=%MYSQL_PATH% --log-error=%LOG_PATH%mysql.log --datadir=%MYSQL_PATH%data
 rem RunHiddenConsole %MYSQL_PATH%\bin\mysqld.exe
 
 tasklist /fi "imagename eq nginx.exe"

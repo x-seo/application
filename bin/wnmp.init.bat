@@ -13,4 +13,3 @@ set PATH=%PATH%;%WNMP_ROOT%bin\;%PHP_PATH%;%MYSQL_PATH%bin\;
 
 rem SET REDIS_PATH=daff
 rem echo %REDIS_PATH%
-
