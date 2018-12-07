@@ -14,3 +14,6 @@ clash
 *.rar
 *.7z
 *.log
+*.wt
+*.lock
+data

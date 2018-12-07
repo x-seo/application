@@ -1,0 +1,2 @@
+#!/bin/bash
+wget -o='postgresql11.zip' https://get.enterprisedb.com/postgresql/postgresql-11.0-1-windows-x64-binaries.zip?ls=Crossover&type=Crossover&_ga=2.206247123.1911284852.1544156357-696733357.1544156357
