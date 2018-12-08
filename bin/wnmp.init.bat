@@ -2,22 +2,44 @@
 REM init wnmp
 
 set WNMP_ROOT=D:\application\
+set WNMP_PATH=%WNMP_ROOT%bin\;
+set LOG_PATH=%WNMP_ROOT%logs\
 
 rem Setting PHP PATH
-set PHP_PATH=D:\application\php\php-5.4.45\
-REM set PHP_PATH=D:\application\php\php-5.6.37\
-REM set PHP_PATH=D:\application\php\php-7.2.12\
+set PHP_PATH=%WNMP_ROOT%php\php-5.4.45\
+REM set PHP_PATH=%WNMP_ROOT%php\php-5.6.37\
+REM set PHP_PATH=%WNMP_ROOT%php\php-7.2.12\
+if "%PHP_PATH%" == "" (
+    rem echo 111
+) else (
+    set WNMP_PATH=%WNMP_PATH%%PHP_PATH%;
+)
 
-rem set MYSQL_PATH=D:\application\mysql\mysql-5.0.96-winx64\
-set MYSQL_PATH=D:\application\mysql\mysql-5.5.24\
-REM set MYSQL_PATH=D:\application\mysql\mysql-5.7.23-winx64\
 
-set OPEN_PATH=D:\application\openresty\openresty-1.13.6.2\
-set LOG_PATH=D:\application\logs\
-rem set RunHiddenConsole=D:\application\bin\RunHiddenConsole.exe
+rem set MYSQL_PATH=%WNMP_ROOT%mysql\mysql-5.0.96-winx64\
+set MYSQL_PATH=%WNMP_ROOT%mysql\mysql-5.5.24\
+REM set MYSQL_PATH=%WNMP_ROOT%mysql\mysql-5.7.23-winx64\
+if "%MYSQL_PATH%" == "" (
+    rem echo 111
+) else (
+    set WNMP_PATH=%WNMP_PATH%%MYSQL_PATH%bin\;
+)
 
-set PATH=%PATH%;%WNMP_ROOT%bin\;%PHP_PATH%;%MYSQL_PATH%bin\;%OPEN_PATH%
-
+set OPEN_PATH=%WNMP_ROOT%openresty\openresty-1.13.6.2\
+rem set RunHiddenConsole=%WNMP_ROOT%bin\RunHiddenConsole.exe
+if "%OPEN_PATH%" == "" (
+    rem echo 111
+) else (
+    set WNMP_PATH=%WNMP_PATH%%OPEN_PATH%;
+)
 
 rem SET REDIS_PATH=daff
 rem echo %REDIS_PATH%
+
+rem SET PGSQL_PATH=daff
+rem echo %PGSQL_PATH%
+
+rem SET PGSQL_PATH=daff
+rem echo %PGSQL_PATH%
+
+set PATH=%WNMP_PATH%;%PATH%

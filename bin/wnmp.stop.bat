@@ -19,3 +19,10 @@ if "%REDIS_PATH%" == "" (
     echo Stopping Redis...
     taskkill /F /IM redis.exe > nul
 )
+
+if "%PGSQL_PATH%" == "" (
+    echo PGSQL is not running, skip!
+) else (
+    echo Stopping PGSQL...
+    taskkill /F /IM pgsql.exe > nul
+)
