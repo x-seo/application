@@ -4,6 +4,14 @@ call wnmp.init.bat
 
 echo Starting PHP FastCGI...
 RunHiddenConsole %PHP_PATH%\php-cgi.exe -b 127.0.0.1:9000 -c %PHP_PATH%\php.ini
+
+rem Run PHP7
+if "%PHP7_PATH%" == "" (
+    rem echo 111
+) else (
+    echo Starting PHP7 FastCGI...
+    RunHiddenConsole %PHP7_PATH%\php-cgi.exe -b 127.0.0.1:9007 -c %PHP7_PATH%\php.ini
+)
  
 rem echo Starting nginx...
 rem RunHiddenConsole %WNMP_DIR%/nginx/nginx.exe -p %WNMP_DIR%/nginx
@@ -19,3 +27,4 @@ rem RunHiddenConsole %MYSQL_PATH%\bin\mysqld.exe
 tasklist /fi "imagename eq nginx.exe"
 tasklist /fi "imagename eq php-cgi.exe"
 tasklist /fi "imagename eq mysqld.exe"
+

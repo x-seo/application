@@ -42,4 +42,14 @@ rem echo %PGSQL_PATH%
 rem SET PGSQL_PATH=daff
 rem echo %PGSQL_PATH%
 
-set PATH=%WNMP_PATH%;%PATH%
+rem Setting PHP7 PATH
+set PHP7_PATH=%WNMP_ROOT%php\php-7.2.12\
+if "%PHP7_PATH%" == "" (
+    rem echo 111
+) else (
+    REM set WNMP_PATH=%WNMP_PATH%%PHP7_PATH%;
+)
+
+set TEMP_PATH=%WNMP_PATH%;
+echo Your mate run: set PATH=%TEMP_PATH%;%PATH%
+echo Enjoy It!
